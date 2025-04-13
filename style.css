@@ -6,6 +6,8 @@
     --botao-ativo: #240202;
     --botao-inativo: rgba(48, 0, 2, 0.5);
     --texto-fundo: rgba(78, 10, 10, 0.3);
+    --cor-de-fundo: #1a1a1a;
+    --sombra: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -13,8 +15,10 @@ body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
-
 
 .conteudo-principal {
     display: flex;
@@ -22,20 +26,21 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .titulo-principal {
-    text-align: left;
+    text-align: center;
     width: 100%;
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .titulo-principal span {
     color: var(--verde);
 }
-
 
 .botao {
     font-family: 'Chakra Petch', sans-serif;
@@ -47,29 +52,37 @@ body {
     font-size: 18px;
     align-items: center;
     width: 100%;
-    border-bottom: 4px solid var(--botao-ativo);
-    border-left: 2px solid var(--botao-ativo);
-    border-right: 2px solid var(--botao-ativo);
-    border-top: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px var(--sombra);
+    cursor: pointer;
 }
 
-.botao:first-child {
-    border-radius: 40px 40px 0 0;
-}
-
-.botoes {
-    display: block;
+.botao:hover {
+    background-color: var(--botao-ativo);
+    transform: scale(1.05);
 }
 
 .botao.ativo {
     background-color: var(--botao-ativo);
-    border-bottom: 4px solid var(--verde);
+    border: 2px solid var(--verde);
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .abas-textos {
     background-color: var(--texto-fundo);
     padding: 40px;
-    border-radius: 0 0 40px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--sombra);
+    width: 100%;
 }
 
 .aba-conteudo.ativo {
@@ -83,52 +96,61 @@ body {
 .aba-conteudo-titulo-principal {
     font-size: 28px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .aba-conteudo-titulo-secundario {
     text-align: center;
     color: var(--verde);
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .contador {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .contador-digito {
     padding: 0 16px;
     text-align: center;
-    min-width: 100px;
+    min-width: 80px;
 }
 
 .contador-digito-numero {
-    font-size: 80px;
+    font-size: 60px;
     margin: 0;
-
 }
 
 .contador-digito-texto {
     color: var(--verde);
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
-
 }
 
 @media screen and (min-width: 768px) {
+    .titulo-principal {
+        font-size: 48px;
+    }
+
+    .botao {
+        width: auto;
+        padding: 0.8em 2em;
+    }
+
     .botoes {
-        display: flex;
+        justify-content: flex-start;
     }
 
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
+    .contador-digito-numero {
+        font-size: 80px;
     }
 
-    .botao:last-child {
-        border-radius: 0 40px 0 0;
+    .contador-digito-texto {
+        font-size: 18px;
     }
-
 }
 
 
