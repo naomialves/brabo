@@ -50,9 +50,22 @@ function atualizaCronometro() {
     }
 }
 
+let intervalo;
+
 function comecaCronometro() {
     atualizaCronometro();
-    setInterval(atualizaCronometro, 1000);
+    if (intervalo) clearInterval(intervalo);
+    intervalo = setInterval(atualizaCronometro, 1000);
+    console.log("Cronômetro iniciado com sucesso.");
 }
+
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        console.log("A aba está visível. Reiniciando o cronômetro.");
+        comecaCronometro();
+    } else {
+        console.log("A aba está oculta. Cronômetro pausado.");
+    }
+});
 
 comecaCronometro();
