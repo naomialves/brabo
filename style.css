@@ -9,17 +9,24 @@
     --cor-de-fundo: #1a1a1a;
     --sombra: rgba(0, 0, 0, 0.2);
     --transicao: 0.3s ease;
+    --fonte-titulo: 'Chakra Petch', sans-serif;
+    --fonte-corpo: Arial, sans-serif;
+    --tamanho-base: 16px;
+    --tamanho-titulo: 2.25rem;
+    --tamanho-subtitulo: 1.5rem;
+    --tamanho-texto: 1rem;
+    --tamanho-menor: 0.875rem;
 }
 
 body {
     background-image: url("guts.png");
     background-color: var(--cor-de-fundo);
     color: var(--branco);
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: var(--fonte-corpo);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    font-size: 16px; /* Melhorando a legibilidade */
+    line-height: 1.8;
+    font-size: var(--tamanho-base);
 }
 
 header {
@@ -46,8 +53,8 @@ header {
 .titulo-principal {
     text-align: center;
     width: 100%;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: var(--tamanho-titulo);
+    margin-bottom: 30px;
 }
 
 .titulo-principal span {
@@ -113,9 +120,8 @@ header {
 }
 
 .aba-conteudo-titulo-principal {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: var(--tamanho-subtitulo);
+    margin-bottom: 15px;
 }
 
 .aba-conteudo-titulo-secundario {
@@ -174,10 +180,10 @@ header {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     background-color: var(--texto-fundo);
     color: var(--branco);
-    font-size: 16px; /* Melhorando a legibilidade */
+    font-size: var(--tamanho-texto);
     border-top: 2px solid var(--verde);
 }
 
@@ -185,18 +191,88 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Adicionando responsividade para telas menores */
-@media screen and (max-width: 480px) {
+/* Melhorias de responsividade */
+@media screen and (max-width: 768px) {
     .titulo-principal {
-        font-size: 32px;
+        font-size: 1.75rem;
     }
 
     .botao {
-        font-size: 16px;
+        font-size: var(--tamanho-texto);
+        padding: 0.6em 1.5em;
     }
 
     .contador-digito-numero {
-        font-size: 50px;
+        font-size: 2.5rem;
+    }
+
+    .contador-digito-texto {
+        font-size: var(--tamanho-menor);
+    }
+
+    .abas-textos {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-principal {
+        font-size: 1.5rem;
+    }
+
+    .botao {
+        font-size: var(--tamanho-menor);
+    }
+
+    .contador-digito-numero {
+        font-size: 2rem;
+    }
+
+    .contador-digito-texto {
+        font-size: var(--tamanho-menor);
+    }
+
+    .abas-textos {
+        padding: 15px;
+    }
+}
+
+/* Melhorias de responsividade para smartphones */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduzindo o tamanho base para melhor ajuste */
+    }
+
+    .titulo-principal {
+        font-size: 1.25rem; /* Ajustando o tamanho do título */
+        margin-bottom: 20px;
+    }
+
+    .botao {
+        font-size: 0.875rem; /* Reduzindo o tamanho da fonte dos botões */
+        padding: 0.5em 1em; /* Ajustando o espaçamento interno */
+    }
+
+    .botoes {
+        flex-direction: column; /* Empilhando os botões verticalmente */
+        gap: 5px; /* Reduzindo o espaçamento entre botões */
+    }
+
+    .abas-textos {
+        padding: 15px; /* Reduzindo o espaçamento interno */
+    }
+
+    .contador-digito-numero {
+        font-size: 1.5rem; /* Ajustando o tamanho dos números do contador */
+    }
+
+    .contador-digito-texto {
+        font-size: 0.75rem; /* Ajustando o tamanho do texto do contador */
+    }
+
+    footer {
+        font-size: 0.875rem; /* Reduzindo o tamanho da fonte no rodapé */
+        padding: 15px; /* Ajustando o espaçamento interno */
     }
 }
 
