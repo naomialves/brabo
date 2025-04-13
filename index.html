@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Acompanhe seus objetivos do ano com contadores e abas interativas.">
     <meta name="author" content="Seu Nome">
     <meta name="keywords" content="objetivos, metas, cronômetro, planejamento">
@@ -16,17 +16,17 @@
 
 <body>
     <header>
-        <h1 class="titulo-principal" id="topo">Meus objetivos do ano<span>_</span></h1>
+        <h1 class="titulo-principal" id="topo" tabindex="0">Meus objetivos do ano<span>_</span></h1>
     </header>
     <main class="conteudo-principal" role="main">
         <div class="conteudo">
             <nav class="botoes" aria-label="Navegação entre objetivos">
-                <button class="botao ativo" aria-controls="aba1" aria-selected="true">Terminar o ensino médio</button>
-                <button class="botao" aria-controls="aba2" aria-selected="false">Plano de estudos</button>
-                <button class="botao" aria-controls="aba3" aria-selected="false">Estabelecer planos para o futuro</button>
-                <button class="botao" aria-controls="aba4" aria-selected="false">Resultado</button>
+                <button class="botao ativo" aria-controls="aba1" aria-selected="true" role="tab">Terminar o ensino médio</button>
+                <button class="botao" aria-controls="aba2" aria-selected="false" role="tab">Plano de estudos</button>
+                <button class="botao" aria-controls="aba3" aria-selected="false" role="tab">Estabelecer planos para o futuro</button>
+                <button class="botao" aria-controls="aba4" aria-selected="false" role="tab">Resultado</button>
             </nav>
-            <section class="abas-textos">
+            <section class="abas-textos" role="tabpanel">
                 <div class="aba-conteudo ativo" id="aba1" role="tabpanel">
                     <h3 class="aba-conteudo-titulo-principal">Me formar</h3>
                     <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
@@ -119,7 +119,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Meus Objetivos. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Meus Objetivos. Todos os direitos reservados.</p>
         <a href="#topo" style="color: var(--verde); text-decoration: none;" aria-label="Voltar ao topo da página">Voltar ao topo</a>
     </footer>
     <script src="main.js"></script>
