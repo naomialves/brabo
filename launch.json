@@ -1,5 +1,5 @@
 {
-           "version": "0.2.0",
+    "version": "0.2.0",
     "configurations": [
         {
             "type": "chrome",
@@ -12,6 +12,13 @@
             "type": "edge",
             "request": "launch",
             "name": "Iniciar o Edge em relação a localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "name": "Iniciar o Firefox em relação a localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }
