@@ -1,18 +1,20 @@
 const botoes = document.querySelectorAll(".botao");
 const textos = document.querySelectorAll(".aba-conteudo");
 
-for (let i = 0; i < botoes.length; i++) {
-    botoes[i].onclick = function () {
+botoes.forEach((botao, index) => {
+    botao.onclick = () => {
+        botoes.forEach((b, i) => {
+            b.classList.remove("ativo");
+            textos[i].classList.remove("ativo");
+            b.setAttribute("aria-selected", "false");
+        });
 
-        for (let j = 0; j < botoes.length; j++) {
-            botoes[j].classList.remove("ativo");
-            textos[j].classList.remove("ativo");
-        }
-
-        botoes[i].classList.add("ativo");
-        textos[i].classList.add("ativo");
-    }
-}
+        botao.classList.add("ativo");
+        textos[index].classList.add("ativo");
+        botao.setAttribute("aria-selected", "true");
+        console.log(`Aba ${index + 1} ativada.`);
+    };
+});
 
 const contadores = document.querySelectorAll(".contador");
 const tempoObjetivo1 = new Date("2025-12-05T00:00:00");
@@ -21,7 +23,6 @@ const tempoObjetivo3 = new Date("2025-06-30T00:00:00");
 const tempoObjetivo4 = new Date("2026-02-01T00:00:00");
 
 const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
-
 
 function calculaTempo(tempoObjetivo) {
     let tempoAtual = new Date();
@@ -43,10 +44,12 @@ function calculaTempo(tempoObjetivo) {
 
 function atualizaCronometro() {
     for (let i = 0; i < contadores.length; i++) {
-        document.getElementById("dias" + i).textContent = calculaTempo(tempos[i])[0];
-        document.getElementById("horas" + i).textContent = calculaTempo(tempos[i])[1];
-        document.getElementById("min" + i).textContent = calculaTempo(tempos[i])[2];
-        document.getElementById("seg" + i).textContent = calculaTempo(tempos[i])[3];
+        const [dias, horas, minutos, segundos] = calculaTempo(tempos[i]);
+        document.getElementById("dias" + i).textContent = dias;
+        document.getElementById("horas" + i).textContent = horas;
+        document.getElementById("min" + i).textContent = minutos;
+        document.getElementById("seg" + i).textContent = segundos;
+        console.log(`Atualizando contador ${i + 1}: ${dias}d ${horas}h ${minutos}m ${segundos}s`);
     }
 }
 
