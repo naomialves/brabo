@@ -18,6 +18,17 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    font-size: 16px; /* Melhorando a legibilidade */
+}
+
+header {
+    background-color: var(--texto-fundo);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px var(--sombra);
 }
 
 .conteudo-principal {
@@ -62,6 +73,12 @@ body {
 
 .botao:hover {
     background-color: var(--botao-ativo);
+    transform: scale(1.05);
+}
+
+.botao:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
     transform: scale(1.05);
 }
 
@@ -151,6 +168,19 @@ body {
     .contador-digito-texto {
         font-size: 18px;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--texto-fundo);
+    color: var(--branco);
+    font-size: 14px;
+    border-top: 2px solid var(--verde);
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 
