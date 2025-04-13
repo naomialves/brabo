@@ -8,6 +8,7 @@
     --texto-fundo: rgba(78, 10, 10, 0.3);
     --cor-de-fundo: #1a1a1a;
     --sombra: rgba(0, 0, 0, 0.2);
+    --transicao: 0.3s ease;
 }
 
 body {
@@ -66,7 +67,7 @@ header {
     border: none;
     border-radius: 5px;
     margin: 5px 0;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
     box-shadow: 0 4px 6px var(--sombra);
     cursor: pointer;
 }
@@ -74,6 +75,7 @@ header {
 .botao:hover {
     background-color: var(--botao-ativo);
     transform: scale(1.05);
+    box-shadow: 0 6px 8px var(--sombra);
 }
 
 .botao:focus {
@@ -175,12 +177,27 @@ footer {
     padding: 20px;
     background-color: var(--texto-fundo);
     color: var(--branco);
-    font-size: 14px;
+    font-size: 16px; /* Melhorando a legibilidade */
     border-top: 2px solid var(--verde);
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Adicionando responsividade para telas menores */
+@media screen and (max-width: 480px) {
+    .titulo-principal {
+        font-size: 32px;
+    }
+
+    .botao {
+        font-size: 16px;
+    }
+
+    .contador-digito-numero {
+        font-size: 50px;
+    }
 }
 
 
