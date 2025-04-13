@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe seus objetivos do ano com contadores e abas interativas.">
+    <meta name="author" content="Seu Nome">
+    <meta name="keywords" content="objetivos, metas, cronômetro, planejamento">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Meus objetivos do ano</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,16 +16,16 @@
     <header>
         <h1 class="titulo-principal">Meus objetivos do ano<span>_</span></h1>
     </header>
-    <main class="conteudo-principal">
+    <main class="conteudo-principal" role="main">
         <div class="conteudo">
-            <nav class="botoes">
-                <button class="botao ativo">Terminar o ensino médio</button>
-                <button class="botao">Plano de estudos</button>
-                <button class="botao">Estabelecer planos para o futuro</button>
-                <button class="botao">Resultado</button>
+            <nav class="botoes" aria-label="Navegação entre objetivos">
+                <button class="botao ativo" aria-controls="aba1">Terminar o ensino médio</button>
+                <button class="botao" aria-controls="aba2">Plano de estudos</button>
+                <button class="botao" aria-controls="aba3">Estabelecer planos para o futuro</button>
+                <button class="botao" aria-controls="aba4">Resultado</button>
             </nav>
             <section class="abas-textos">
-                <div class="aba-conteudo ativo">
+                <div class="aba-conteudo ativo" id="aba1" role="tabpanel">
                     <h3 class="aba-conteudo-titulo-principal">Me formar</h3>
                     <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
                     <div class="contador">
@@ -43,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="aba-conteudo">
+                <div class="aba-conteudo" id="aba2" role="tabpanel">
                     <h3 class="aba-conteudo-titulo-principal">Finalizar meu plano de estudos</h3>
                     <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
                     <div class="contador">
@@ -65,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="aba-conteudo">
+                <div class="aba-conteudo" id="aba3" role="tabpanel">
                     <h3 class="aba-conteudo-titulo-principal">Criar um plano para a vida pós ensino médio</h3>
                     <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
                     <div class="contador">
@@ -87,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="aba-conteudo">
+                <div class="aba-conteudo" id="aba4" role="tabpanel">
                     <h3 class="aba-conteudo-titulo-principal">resultado do vestibular</h3>
                     <h4 class="aba-conteudo-titulo-secundario">Tempo para sair o resultado</h4>
                     <div class="contador">
@@ -113,7 +117,8 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Meus Objetivos. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Meus Objetivos. Todos os direitos reservados.</p>
+        <a href="#topo" style="color: var(--verde); text-decoration: none;">Voltar ao topo</a>
     </footer>
     <script src="main.js"></script>
 </body>
