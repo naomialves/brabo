@@ -13,7 +13,7 @@ botoes.forEach((botao, index) => {
         botao.classList.add("ativo");
         textos[index].classList.add("ativo");
         botao.setAttribute("aria-selected", "true");
-        console.log(`Aba ${index + 1} ativada.`);
+        console.log(`Aba ${index + 1} ativada: ${botao.textContent.trim()}`);
     };
 });
 
@@ -74,6 +74,5 @@ document.addEventListener("visibilitychange", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Bem-vindo ao site de objetivos! Explore as abas e acompanhe seu progresso.");
+    comecaCronometro();
 });
-
-comecaCronometro();
