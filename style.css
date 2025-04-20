@@ -1,21 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    --verde: #a30000;
-    --branco: #FFFFFF;
-    --botao-ativo: #240202;
-    --botao-inativo: rgba(48, 0, 2, 0.5);
-    --texto-fundo: rgba(78, 10, 10, 0.3);
-    --cor-de-fundo: #1a1a1a;
-    --sombra: rgba(0, 0, 0, 0.2);
-    --transicao: 0.3s ease;
+    --verde: #4caf50; /* Cor verde mais vibrante */
+    --branco: #f9f9f9; /* Branco mais suave */
+    --botao-ativo: #388e3c; /* Verde escuro para botões ativos */
+    --botao-inativo: #2e7d32; /* Verde médio para botões inativos */
+    --texto-fundo: rgba(50, 50, 50, 0.8); /* Fundo mais escuro */
+    --cor-de-fundo: #121212; /* Fundo preto para contraste */
+    --sombra: rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
+    --transicao: 0.2s ease-in-out; /* Transição mais rápida */
     --fonte-titulo: 'Chakra Petch', sans-serif;
-    --fonte-corpo: Arial, sans-serif;
+    --fonte-corpo: 'Roboto', sans-serif; /* Fonte mais moderna */
     --tamanho-base: 16px;
-    --tamanho-titulo: 2.25rem;
-    --tamanho-subtitulo: 1.5rem;
+    --tamanho-titulo: 2.5rem; /* Título maior */
+    --tamanho-subtitulo: 1.75rem; /* Subtítulo maior */
     --tamanho-texto: 1rem;
     --tamanho-menor: 0.875rem;
+}
+
+/* Adicionando animação suave para transições */
+* {
+    transition: all var(--transicao);
 }
 
 body {
@@ -61,6 +66,7 @@ header {
     color: var(--verde);
 }
 
+/* Melhorando o estilo dos botões */
 .botao {
     font-family: 'Chakra Petch', sans-serif;
     background-color: var(--botao-inativo);
@@ -71,18 +77,22 @@ header {
     font-size: 18px;
     align-items: center;
     width: 100%;
-    border: none;
+    border: 2px solid transparent; /* Adicionando borda para foco */
     border-radius: 5px;
     margin: 5px 0;
-    transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
-    box-shadow: 0 4px 6px var(--sombra);
+    transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao), border var(--transicao);
+    box-shadow: 0 4px 8px var(--sombra);
     cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .botao:hover {
     background-color: var(--botao-ativo);
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px var(--sombra);
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px var(--sombra);
+    border: 2px solid var(--verde); /* Adicionando borda ao hover */
 }
 
 .botao:focus {
@@ -144,9 +154,22 @@ header {
     min-width: 80px;
 }
 
+/* Adicionando animação ao contador */
 .contador-digito-numero {
     font-size: 60px;
     margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contador-digito-texto {
@@ -178,16 +201,24 @@ header {
     }
 }
 
+/* Melhorando o estilo do rodapé */
 footer {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: var(--texto-fundo);
+    background: linear-gradient(90deg, var(--botao-inativo), var(--botao-ativo));
     color: var(--branco);
-    font-size: var(--tamanho-texto);
-    border-top: 2px solid var(--verde);
+    font-size: var(--tamanho-menor);
+    text-align: center;
+    padding: 20px;
+    border-top: none;
+}
+
+footer a {
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color var(--transicao);
 }
 
 footer a:hover {
+    color: var(--botao-ativo);
     text-decoration: underline;
 }
 
