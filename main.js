@@ -3,6 +3,7 @@ const textos = document.querySelectorAll(".aba-conteudo");
 
 botoes.forEach((botao, index) => {
     botao.onclick = () => {
+        console.log(`Botão clicado: ${botao.textContent.trim()}`);
         botoes.forEach((b, i) => {
             b.classList.remove("ativo");
             textos[i].classList.remove("ativo");
@@ -69,6 +70,10 @@ document.addEventListener("visibilitychange", () => {
     } else {
         console.log("A aba está oculta. Cronômetro pausado.");
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Bem-vindo ao site de objetivos! Explore as abas e acompanhe seu progresso.");
 });
 
 comecaCronometro();
