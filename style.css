@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    --verde: #500404; /* Cor verde mais vibrante */
-    --branco: #f9f9f9; /* Branco mais suave */
-    --botao-ativo: #970000; /* Verde escuro para botões ativos */
-    --botao-inativo: #4e0404; /* Verde médio para botões inativos */
-    --texto-fundo: rgba(50, 50, 50, 0.8); /* Fundo mais escuro */
-    --cor-de-fundo: #121212; /* Fundo preto para contraste */
-    --sombra: rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
-    --transicao: 0.2s ease-in-out; /* Transição mais rápida */
-    --fonte-titulo: 'Chakra Petch', sans-serif;
-    --fonte-corpo: 'Roboto', sans-serif; /* Fonte mais moderna */
+    --verde: #00796b; /* Verde profissional */
+    --branco: #ffffff; /* Branco puro */
+    --botao-ativo: #004d40; /* Verde escuro */
+    --botao-inativo: #00695c; /* Verde médio */
+    --texto-fundo: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    --cor-de-fundo: #121212; /* Fundo preto */
+    --sombra: rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    --transicao: 0.3s ease-in-out; /* Transição mais suave */
+    --fonte-titulo: 'Poppins', sans-serif; /* Fonte moderna */
+    --fonte-corpo: 'Roboto', sans-serif;
     --tamanho-base: 16px;
-    --tamanho-titulo: 2.5rem; /* Título maior */
-    --tamanho-subtitulo: 1.75rem; /* Subtítulo maior */
+    --tamanho-titulo: 2.5rem;
+    --tamanho-subtitulo: 1.75rem;
     --tamanho-texto: 1rem;
     --tamanho-menor: 0.875rem;
 }
@@ -35,7 +35,8 @@ body {
 }
 
 header {
-    background-color: var(--texto-fundo);
+    background: linear-gradient(90deg, var(--botao-inativo), var(--botao-ativo));
+    color: var(--branco);
     padding: 20px;
     text-align: center;
     position: sticky;
@@ -68,16 +69,12 @@ header {
 
 /* Melhorando o estilo dos botões */
 .botao {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: var(--fonte-titulo);
     background-color: var(--botao-inativo);
     color: var(--branco);
-    display: flex;
-    justify-content: center;
     padding: 1em;
-    font-size: 18px;
-    align-items: center;
-    width: 100%;
-    border: 2px solid transparent; /* Adicionando borda para foco */
+    font-size: 1rem;
+    border: 2px solid transparent;
     border-radius: 5px;
     margin: 5px 0;
     transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao), border var(--transicao);
@@ -90,7 +87,7 @@ header {
 
 .botao:hover {
     background-color: var(--botao-ativo);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 8px 12px var(--sombra);
     border: 2px solid var(--verde); /* Adicionando borda ao hover */
 }
@@ -218,7 +215,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--botao-ativo);
+    color: var(--verde);
     text-decoration: underline;
 }
 
